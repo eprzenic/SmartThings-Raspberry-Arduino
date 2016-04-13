@@ -36,7 +36,11 @@ post command refresh will return a status of all pin/led/Relays
 
 Step 4
 smartthign HTTP device type modified to send post commands to the raspberry server and parse the return to. 
-I have 5 of these device type configured in 
+I have 5 of these device type configured in smartthings point to  5 virtual (alais) ip address so the smartthing device id are unique to the devices. 
+
+The device type are configured as switches to add scheduling and logic from Rule Machine or Smart Rules. 
+
+
 
 
 
