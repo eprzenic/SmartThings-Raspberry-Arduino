@@ -2,11 +2,11 @@
 Smartthings to Raspberry to Arduino RF24 project
 Disclaimer: 
 This is the first time I ever tried a public project like this. 
-I have been struggling but having fun learning the Arduino, Smartthings, Raspberry plateform for the last few weeks 
+I have been struggling but having fun learning the Arduino, Smartthings, Raspberry platforms for the last few weeks 
 and decided that I would post my code and start a conversation on different ways to do this. 
 
 My idea is the hook the arduino wirelessly to 5 relays to power 5 sprinkler valves. I have 5 raised garden bed I want to 
-wire automatically
+water automatically
 
 Here is the basic setup
 RaspberryPi wired to a NRF24l01 transeiver
@@ -38,14 +38,14 @@ Step 4
 smartthign HTTP device type modified to send post commands to the raspberry server and parse the return to. 
 I have 5 of these device type configured in smartthings point to  5 virtual (alais) ip address so the smartthing device id are unique to the devices. 
 
-The device type are configured as switches to add scheduling and logic from Rule Machine or Smart Rules. 
+The device type are configured as switches to add scheduling and logic from Rule Machine or Smart Rules. Right now the arduino is hooked to 5 led which reprepsent the 5 relays. This is so I can test. 
 
 What left to do
 - Buy the 8 channel relay and power supply 
 - Buy the solinoid sprinkler valves
 - Test the range of the Arudino/Raspberry connection
 
-On the Smartthing side. I might adopted a Irrigatio device type example that is out there and modify that to work across my 5 zones.  Thetn I can use a Smart Irrigation app for scheduling. 
+On the Smartthing side. I might adopted a Irrigation device type example that is out there and modify that to work across my 5 zones.  Then I can use a Smart Irrigation app for scheduling. 
 
 
 
