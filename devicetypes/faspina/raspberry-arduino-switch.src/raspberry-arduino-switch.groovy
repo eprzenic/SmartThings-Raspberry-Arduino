@@ -21,7 +21,8 @@ metadata {
         capability "Refresh"
         
         command "refresh"
-        attribute "bstatus", "string"
+        command "send"
+        
 
 	}
 
@@ -46,9 +47,10 @@ metadata {
 	tiles 
     	{
 		
-		standardTile("switch", "device.switch", width: 3, height: 3, decoration: "flat" ){
-			state ("off", label:'on' , action: "on", icon: "st.Home.home6", backgroundColor:"#ffffff",isStateChange: true )
-			state ("on", label: 'off', action: "off", icon: "st.Home.home6", backgroundColor: "#0022FF",isStateChange: true)
+		standardTile("switch", "device.switch", width: 3, height: 3 ){
+			state ("off", label:'off' , action: "send", icon: "st.Home.home6", backgroundColor:"#ffffff",isStateChange: true,nextState: "send")
+			state ("on", label: 'on', action: "off", icon: "st.Home.home6", backgroundColor: "#0022FF",isStateChange: true,nextState: "send")
+			state ("send", label: 'sending', action: "none", icon: "st.Home.home6", backgroundColor: "#00FFA6")
 		}
            standardTile("refresh", "device.refresh", inactiveLabel: false, decoration: "flat") {
         	state "default", action:"refresh.refresh", icon: "st.secondary.refresh"
@@ -60,7 +62,7 @@ metadata {
     }
 
 
-def on() {
+def send(){
     def led = DeviceNumber
     log.debug led + " On"
     runCmd("Led" + DeviceNumber + "on")
@@ -141,8 +143,7 @@ def parse(String description) {
 	def bodyReturned = new String(descMap["body"].decodeBase64())
 	def headersReturned = new String(descMap["headers"].decodeBase64())
 
-    
-	device.deviceNetworkId = "ID_WILL_BE_CHANGED_AT_RUNTIME_" + (Math.abs(new Random().nextInt()) % 99999 + 1)
+
 	
     def isOn = "("+DeviceNumber + ":1)"
     def isOff = "("+DeviceNumber + ":0)"
