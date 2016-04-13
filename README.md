@@ -1,5 +1,5 @@
 # SmartThings-Raspberry-Arduino
-Smarttings to Raspberry to Arduino RF24 project
+Smartthings to Raspberry to Arduino RF24 project
 Disclaimer: 
 This is the first time I ever tried a public project like this. 
 I have been struggling but having fun learning the Arduino, Smartthings, Raspberry plateform for the last few weeks 
@@ -40,6 +40,12 @@ I have 5 of these device type configured in smartthings point to  5 virtual (ala
 
 The device type are configured as switches to add scheduling and logic from Rule Machine or Smart Rules. 
 
+What left to do
+- Buy the 8 channel relay and power supply 
+- Buy the solinoid sprinkler valves
+- Test the range of the Arudino/Raspberry connection
+
+On the Smartthing side. I might adopted a Irrigatio device type example that is out there and modify that to work across my 5 zones.  Thetn I can use a Smart Irrigation app for scheduling. 
 
 
 
